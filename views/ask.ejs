@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/head.ejs')%>
+
+  <body class="bg-light bg-gradient">
+    <%-include('partials/navbar.ejs')%>
+    <div class="container mt-5">
+      <div class="card">
+        <div class="card-header bg-primary text-white">
+
+          <h3 class="mb-3" class="mt-3">Ask DH</h3>
+        </div>
+        <div class="card-body">
+
+          <form action="/save-ask" method="post">
+            <div class="mb-3">
+              <label for="formGroupInput" class="form-label">Title</label>
+              <input type="text"name="title" placeholder="Title" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="formGroupTextArea" class="form-label">Description</label>
+              <textarea placeholder="ask here ..." name="description" id="" cols="30" rows="10" class="form-control"></textarea>
+            </div>
+            <button class="btn btn-primary btn-lg">Send</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </body>
+<%-include('partials/bootstrapjs.ejs')%>
+
+</html>

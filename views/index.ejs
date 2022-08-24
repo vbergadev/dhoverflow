@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/head.ejs')%>
+
+  <body class="bg-light bg-gradient">
+    <%-include('partials/navbar.ejs')%>
+      <div class="container">
+        <h1>DH OVERFLOW</h1>
+        <a href="/ask" class="btn btn-primary">Ask</a>
+        <% asks.forEach(ask=> {%>
+          <div class="card">
+            <div class="card-body">
+              <h3>
+                <%=ask.title%>
+              </h3>
+            </div>
+            <div class="card-footer">
+              <a href="/ask/<%=ask.id%>"><button class="btn btn-success">Answer</button></a>
+            </div>
+          </div>
+          <% })%>
+      </div>
+  </body>
+
+  <body class="bg-light bg-gradient">
+    <%-include('partials/bootstrapjs.ejs')%>
+
+</html>

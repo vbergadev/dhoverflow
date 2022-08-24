@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<%-include('partials/head.ejs')%>
+
+  <body class="bg-light bg-gradient">
+    <%-include('partials/navbar.ejs')%>
+      <div class="container">
+        <h1>
+          <%=ask.title%>
+        </h1>
+        <p>
+          <%=ask.description%>
+        </p>
+        <form action="/answer" method="POST">
+          <h3>Answer</h3>
+          <textarea placeholder="White an answer here ..." name="body" id="" cols="30" rows="10"
+            class="form-control"></textarea>
+          <input type="hidden" name="askId" value="<%=ask.id%>">
+          <button class="btn btn-primary mt-3" type="submit">Send Answer</button>
+        </form>
+        <h3 class="mt-3">Other Answers</h3>
+        <%answer.forEach(a=>{%>
+          <div class="card mt-3">
+            <div class="card-body">
+
+              <%=a.body%>
+            </div>
+          </div>
+          <% }) %>
+      </div>
+  </body>
+
+  <body class="bg-light bg-gradient">
+    <%-include('partials/bootstrapjs.ejs')%>
+
+</html>
